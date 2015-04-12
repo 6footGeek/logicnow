@@ -1,8 +1,8 @@
 package contactdb;
 
 
-import com.barlow.andy.contactdb.dao.DBmethods;
-import com.barlow.andy.contactdb.entities.Contact;
+import contactdb.dao.DBmethods;
+import contactdb.entities.Contact;
 
 import java.util.List;
 
@@ -30,11 +30,6 @@ public class App {
         //add data to table
 //        Contact contact = new Contact("Andy", "Barlow");
 //        x.insert(contact);
-
-
-        //select by id
-//        Contact contact = x.selectBtId(2);
-//        System.out.println(contact.getID() + ": " + contact.getFirstName() + " " + contact.getLastName());
 
 
         //delete by id

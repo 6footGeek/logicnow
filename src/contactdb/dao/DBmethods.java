@@ -1,7 +1,9 @@
 package contactdb.dao;
 
-import com.barlow.andy.contactdb.entities.Contact;
-import com.barlow.andy.contactdb.utils.ConnectionUtil;
+import contactdb.entities.Contact;
+import contactdb.utils.ConnectionUtil;
+import contactdb.entities.Contact;
+import contactdb.utils.ConnectionUtil;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -32,9 +34,6 @@ import java.util.List;
  *          delete();
  *              delete is the DB delete function. It deletes row from database where id = id that is passed as int parameter.
  *              int id is unique so allows for correct deletion of record rather than deleting by first_name/last_name which could be duplicated.
- *
- *          selectById();
- *              allows the delete() and update() method to work cleaner by selecting id rather than first_name/last_name as id is unique so no inadvertent deleting of duplicated contacts.
  *
  *          selectAll();
  *              method allows all records to be displayed in format of id, first_name, last_name. Just used for display / test purposes.
@@ -111,54 +110,6 @@ public class DBmethods implements iDBmethods {
         }
     }
 
-    @Override
-    public Contact selectById(int id) {
-
-        Contact contact = new Contact();
-        Connection c = null;
-        PreparedStatement sql = null;
-        ResultSet result = null;
-
-        try {
-            c = ConnectionUtil.getConnection();
-            sql = c.prepareStatement("SELECT * FROM contact WHERE id = ?");
-            sql.setInt(1, id);
-            result = sql.executeQuery();
-
-            while (result.next()) {
-                contact.setID(result.getInt("id"));
-                contact.setFirstName(result.getString("first_name"));
-                contact.setLastName(result.getString("last_name"));
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            if (result != null) {
-                try {
-                    result.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-            if (sql != null) {
-                try {
-                    sql.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-            if (c != null) {
-                try {
-                    c.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-
-
-        return contact;
-    }
 
     @Override
     public List<Contact> selectAll() {
