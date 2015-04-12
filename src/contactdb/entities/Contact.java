@@ -14,7 +14,7 @@ package contactdb.entities;
  *      Removed 2 methods from interface as seemed better to keep them in a seperate class -
  *      the following methods are now located in DBmethods.java
  *
- *      void save(); (renamed to insert())
+ *      void save(); (also renamed to insert())
  *      void delete();
  *
  */
