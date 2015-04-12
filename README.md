@@ -1,11 +1,12 @@
 # logicnow Internship submission
 
-3 parts to submission. 
-"mailstore" package contains implementation of Q1
-"contact" package contains strict implementation of Q2.
-"contactdb" package contains my version of the implementation of Q2.
+3 parts to submission.
 
-Both solutions written in Java.
++ "mailstore" package contains implementation of Q1
++ "contact" package contains strict implementation of Q2.
++ "contactdb" package contains my version of the implementation of Q2.
+
+All solutions written in Java.
 
 
 ### Q1
